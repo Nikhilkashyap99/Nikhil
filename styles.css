@@ -1,0 +1,95 @@
+
+body
+ {
+    font-family: Arial-Castellar;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:url(a-tree-at-night-with-pale-moon-768x691.jpg);
+}
+.avatar 
+{
+  width: 120px;   
+  height: 120px;  
+  object-fit: cover;
+  border-radius: 100%;
+  position: absolute;
+  top: -15%;
+  left: calc(80% - 50%);
+
+  } 
+
+.loginbox 
+{
+    width: 200px;
+    padding: 50px;
+    text-align: center;
+    background-color:#99C4DB ;
+    color: #000;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.loginbox h1
+ {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.loginbox p
+ {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.loginbox input[type="text"],
+.loginbox input[type="password"] 
+{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-bottom: 2px dotted#000;
+}
+
+.loginbox input[type="submit"] 
+{
+    width: 100%;
+    padding: 10px;
+    background-color: #14f6c3;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.loginbox input[type="submit"]:hover
+ {
+    background-color:#5f9fe9;
+}
+
+.loginbox a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-top: 10px;
+}
+
+.loginbox a:hover
+ {
+    color: #000;
+}
+
+

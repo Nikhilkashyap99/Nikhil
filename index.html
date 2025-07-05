@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 350px;
+      background: #fff;
+      margin: 60px auto;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      width: 95%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    a {
+      display: block;
+      margin-top: 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .form-section {
+      display: none;
+    }
+
+    .form-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="User-Avatar-Profile-PNG-Free-File-Download.png" alt="User avatar" class="avatar" />
+
+    <!-- Login Form -->
+    <div id="loginForm" class="form-section active">
+      <h1>Login</h1>
+      <form onsubmit="return handleLogin(event)">
+        <input type="text" id="loginUser" placeholder="Username" required /><br />
+        <input type="password" id="loginPass" placeholder="Password" required /><br />
+        <input type="submit" value="Login" /><br />
+      </form>
+      <a href="#" onclick="showForm('forgotForm')">Forgot password?</a>
+      <a href="#" onclick="showForm('registerForm')">Create an account</a>
+    </div>
+
+    <!-- Forgot Password Form -->
+    <div id="forgotForm" class="form-section">
+      <h1>Forgot Password</h1>
+      <form onsubmit="return handleForgotPassword(event)">
+        <input type="email" id="forgotEmail" placeholder="Enter your email" required /><br />
+        <input type="submit" value="Send Reset Link" /><br />
+      </form>
+      <a href="#" onclick="showForm('loginForm')">Back to login</a>
+    </div>
+
+    <!-- Create Account Form -->
+    <div id="registerForm" class="form-section">
+      <h1>Create Account</h1>
+      <form onsubmit="return handleRegister(event)">
+        <input type="text" id="regUser" placeholder="Choose username" required /><br />
+        <input type="email" id="regEmail" placeholder="Your email" required /><br />
+        <input type="password" id="regPass" placeholder="Choose password" required /><br />
+        <input type="submit" value="Register" /><br />
+      </form>
+      <a href="#" onclick="showForm('loginForm')">Back to login</a>
+    </div>
+  </div>
+
+  <script>
+    function showForm(formId) {
+      const forms = document.querySelectorAll('.form-section');
+      forms.forEach(form => form.classList.remove('active'));
+      document.getElementById(formId).classList.add('active');
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      // Simulated login logic
+      const user = document.getElementById("loginUser").value;
+      const pass = document.getElementById("loginPass").value;
+      
+      // You can add logic here to check credentials
+
+      // Redirect after "successful" login
+      window.location.href = "https://www.ncvtonline.com/2021/02/copa-trade-theory-mock-test.html";
+    }
+
+    function handleForgotPassword(event) {
+      event.preventDefault();
+      const email = document.getElementById("forgotEmail").value;
+      alert("Password reset link sent to: " + email);
+      showForm("loginForm");
+    }
+
+    function handleRegister(event) {
+      event.preventDefault();
+      const user = document.getElementById("regUser").value;
+      const email = document.getElementById("regEmail").value;
+      alert("Account created for " + user + " (" + email + ")");
+      showForm("loginForm");
+    }
+  </script>
+</body>
+</html>
